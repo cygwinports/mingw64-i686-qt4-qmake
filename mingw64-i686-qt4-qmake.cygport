@@ -5,7 +5,7 @@ NAME="mingw64-i686-qt4-qmake"
 VERSION=4.8.5
 RELEASE=2
 CATEGORY="Devel"
-SUMMARY="Qt development tools for Win32 toolchain"
+SUMMARY="Qt4 development tools for Win32 toolchain"
 DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
 contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
 mingw-gcc cross compiler, and installs into the
@@ -48,7 +48,7 @@ src_compile() {
 		-no-sql-psql -no-sql-odbc -no-sql-sqlite -no-sql-tds \
 		-no-rpath -no-reduce-exports \
 		-nomake demos -nomake docs -nomake examples -nomake translations \
-		|| error "shared configure failed"
+		|| error "configure failed"
 
 	cygmake sub-uic3-all-ordered
 	cygmake -C tools/linguist sub-lconvert sub-lrelease sub-lupdate
